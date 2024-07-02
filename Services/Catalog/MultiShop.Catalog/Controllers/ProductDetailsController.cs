@@ -8,6 +8,7 @@ namespace MultiShop.Catalog.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+
     public class ProductDetailsController : ControllerBase
     {
         private readonly IProductDetailsService _ProductDetailService;
