@@ -34,7 +34,7 @@ namespace MultiShop.Catalog.Services.ProductDetailsServices
         public async Task UpdateProductDetailAsync(UpdateProductDetailDto updateProductDetailDto)
         {
             var values = _mapper.Map<ProductDetails>(updateProductDetailDto);
-            await _productCollection.FindOneAndReplaceAsync(i => i.ProductId == updateProductDetailDto.ProductId, values);
+            await _productCollection.FindOneAndReplaceAsync(i => i.ProductDetailId == updateProductDetailDto.ProductDetailId, values);
         }
 
         public async Task DeleteProductDetailAsync(string id)
