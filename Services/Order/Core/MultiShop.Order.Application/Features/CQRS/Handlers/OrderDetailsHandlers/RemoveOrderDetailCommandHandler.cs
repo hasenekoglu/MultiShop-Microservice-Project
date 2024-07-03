@@ -11,11 +11,11 @@ using MultiShop.Order.Application.Features.CQRS.Commands.OrderDetailCommands;
 
 namespace MultiShop.Order.Application.Features.CQRS.Handlers.OrderDetailsHandlers
 {
-    public class RemoveOrderDetailQueryHandler
+    public class RemoveOrderDetailCommandHandler
     {
         private readonly IRepository<OrderDetail> _repository;
 
-        public RemoveOrderDetailQueryHandler(IRepository<OrderDetail> repository)
+        public RemoveOrderDetailCommandHandler(IRepository<OrderDetail> repository)
         {
             _repository = repository;
         }
