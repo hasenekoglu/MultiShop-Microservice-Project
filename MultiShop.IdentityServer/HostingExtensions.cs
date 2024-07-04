@@ -48,6 +48,8 @@ internal static class HostingExtensions
                 options.ClientSecret = "copy client secret from Google here";
             });
 
+        builder.Services.AddControllers();
+
         return builder.Build();
     }
     
@@ -59,7 +61,7 @@ internal static class HostingExtensions
         {
             app.UseDeveloperExceptionPage();
         }
-
+        app.UseHttpsRedirection();
         app.UseStaticFiles();
         app.UseRouting();
         app.UseIdentityServer();
@@ -67,6 +69,8 @@ internal static class HostingExtensions
         
         app.MapRazorPages()
             .RequireAuthorization();
+
+        app.MapControllers();
 
         return app;
     }
