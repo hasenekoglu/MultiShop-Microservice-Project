@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Duende.IdentityServer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MultiShop.IdentityServer.Dtos;
@@ -6,10 +8,12 @@ using MultiShop.IdentityServer.Models;
 
 namespace MultiShop.IdentityServer.Controllers
 {
+    [Authorize(IdentityServerConstants.LocalApi.PolicyName)]
     [Route("api/[controller]")]
     [ApiController]
     public class RegistersController : ControllerBase
     {
+       
         private readonly UserManager<ApplicationUser> _userManager;
 
         public RegistersController(UserManager<ApplicationUser> userManager)
