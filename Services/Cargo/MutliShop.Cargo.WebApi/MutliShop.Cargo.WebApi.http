@@ -1,0 +1,6 @@
+@MutliShop.Cargo.WebApi_HostAddress = http://localhost:5278
+
+GET {{MutliShop.Cargo.WebApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
